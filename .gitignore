@@ -13,10 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-
-
-# Ignore storage (uploaded files in development and any SQLite databases).
-/storage/*
+!/log/.keep
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
