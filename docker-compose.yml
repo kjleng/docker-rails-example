@@ -1,0 +1,27 @@
+name: my_docker_rails_project
+services:
+  web:
+    build: .
+    image: rails-docker
+    environment:
+      DBHOST: db
+      DBUSER: postgres
+      DBPASS: password
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  db:
+    image: postgres:17.4
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgresdb:/var/lib/postgresql/data/
+
+volumes:
+    postgresdb:
