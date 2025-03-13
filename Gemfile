@@ -42,3 +42,5 @@ group :test do
     gem "faker"
 end
 
+
+gem "sidekiq", "~> 8.0"
